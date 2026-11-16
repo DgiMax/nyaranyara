@@ -1,0 +1,18 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Upload packages (keep these off GitHub)
+*.zip
+*.rar
+*.7z
+
+# Logs / temp
+*.log
+*.tmp
+.cache/
