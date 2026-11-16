@@ -187,10 +187,12 @@ img:hover { filter: grayscale(0); }
 .hero-why {
     position: absolute;
     right: 0.15rem;
+    left: auto;
     bottom: calc(100% + 0.2rem);
     z-index: 2;
-    width: 9.5rem;
-    min-height: 2.75rem;
+    width: max-content;
+    max-width: min(18rem, calc(100vw - 2.5rem));
+    min-height: 0;
     padding: 0.7rem 0.85rem;
     background: var(--ember);
     color: var(--ink);
@@ -199,6 +201,7 @@ img:hover { filter: grayscale(0); }
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     animation: hero-why-float 5.5s ease-in-out infinite;
     pointer-events: none;
+    white-space: nowrap;
 }
 
 .hero-why::after {
@@ -227,18 +230,23 @@ img:hover { filter: grayscale(0); }
     line-height: 1.3;
     color: var(--ink);
     position: absolute;
-    inset: 0.7rem 0.85rem;
+    top: 0.7rem;
+    right: 0.85rem;
+    left: 0.85rem;
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.55s ease, transform 0.55s ease;
     pointer-events: none;
+    white-space: nowrap;
 }
 
 .hero-why-line.is-active {
     opacity: 1;
     transform: translateY(0);
     position: relative;
-    inset: auto;
+    top: auto;
+    right: auto;
+    left: auto;
 }
 
 @keyframes hero-why-float {
@@ -1045,7 +1053,8 @@ section:not(.hero):not(.gallery-strip)::before {
     }
 
     .hero-title-band {
-        padding: 0.85rem 1.25rem 1.15rem;
+        padding: 0.85rem 1.25rem 3.25rem;
+        overflow: visible;
     }
 
     .hero-title {
@@ -1062,39 +1071,42 @@ section:not(.hero):not(.gallery-strip)::before {
     }
 
     .hero-actions {
-        display: flex;
-        flex-direction: column-reverse;
+        display: block;
         width: 100%;
-        align-items: stretch;
-        gap: 0.65rem;
     }
 
     .hero-actions .btn-primary {
         width: 100%;
     }
 
-    .hero-why {
-        position: relative;
-        right: auto;
+    /* Float below the button — does not push layout; grows left */
+    .hero-actions .hero-why {
+        position: absolute;
+        top: calc(100% + 0.45rem);
+        right: 0.15rem;
+        left: auto;
         bottom: auto;
-        align-self: flex-end;
-        width: 9rem;
-        animation: none;
+        width: max-content;
+        max-width: min(18rem, calc(100vw - 2.5rem));
+        white-space: nowrap;
+        animation: hero-why-float 5.5s ease-in-out infinite;
     }
 
-    .hero-why::after,
-    .hero-why::before {
+    /* Arrow on top of tip, pointing up to the button */
+    .hero-actions .hero-why::after,
+    .hero-actions .hero-why::before {
         top: auto;
         bottom: 100%;
         right: 1.25rem;
         border-top-color: transparent;
+        border-bottom-color: transparent;
     }
 
-    .hero-why::after {
+    .hero-actions .hero-why::after {
         border-bottom-color: var(--ember);
     }
 
-    .hero-why::before {
+    .hero-actions .hero-why::before {
         bottom: calc(100% - 1px);
         right: 1.15rem;
         border-bottom-color: rgba(5, 5, 5, 0.18);
