@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyara Nyara Nyara — Join the Movement</title>
+    <meta name="description" content="Nyara Nyara Nyara is in development. Join the waitlist and stand with the film as we write the story that will reach the screen.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+    <div class="media-notice" id="media-notice" role="status" aria-live="polite" hidden>
+        <p class="media-notice-text">
+            Some images on this site are AI-generated placeholders while we await the start of the shoot.
+        </p>
+        <button type="button" class="media-notice-close" id="media-notice-close" aria-label="Dismiss notice">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+    </div>
+<header class="nav">
+        <a href="#" class="nav-brand">Nyara Nyara Nyara</a>
+        <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    </header>
+
+    <main>
+
+        <!-- Full-width image, title band below -->
+        <section class="hero" aria-label="Film hero">
+            <div class="hero-visual">
+                <img
+                    src="images/nyara-hero.webp"
+                    alt="Jimmy, Lory and Jitu — the three voices of Nyara on a Nairobi rooftop"
+                    width="2400"
+                    height="1350"
+                >
+            </div>
+
+            <div class="hero-title-band">
+                <h1 class="hero-title">Nyara Nyara Nyara</h1>
+                <div class="hero-meta">
+                    <p class="hero-lede">
+                        Three voices. One act. The price of being heard. A Kenyan comedy-drama about friendship, fame, and finding your place.
+                    </p>
+                    <div class="hero-actions">
+                        <aside class="hero-why" aria-live="polite">
+                            <p class="hero-why-line is-active">Premiere news first</p>
+                            <p class="hero-why-line">Early film updates</p>
+                            <p class="hero-why-line">Casting news first</p>
+                        </aside>
+                        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Story -->
+        <section class="story" id="story">
+            <div class="wrap story-grid">
+                <h2 class="story-heading">Storyline</h2>
+
+                <div class="story-details">
+                    <ul class="story-meta">
+                        <li>
+                            <span class="meta-label">Country</span>
+                            <span class="meta-value">Kenya</span>
+                        </li>
+                        <li>
+                            <span class="meta-label">Language</span>
+                            <span class="meta-value">English, Kiswahili &amp; Sheng</span>
+                        </li>
+                        <li>
+                            <span class="meta-label">Setting</span>
+                            <span class="meta-value">Kilifi, Nairobi, Nyeri, Kisumu</span>
+                        </li>
+                        <li>
+                            <span class="meta-label">Release date</span>
+                            <span class="meta-value">TBA</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="story-right">
+                    <div class="storyline-body">
+                        <div class="story-copy">
+                            <p>
+                                A gifted storyteller leaves Kilifi for Nairobi, carrying the gift that once filled his family’s restaurant. In the city he finds humiliation, unexpected friendship, and two formidable collaborators. Together they build a breakthrough act — and when fame finally offers him a place on his own, he risks losing the friendship, and the voice, that made him worth hearing.
+                            </p>
+                            <p>
+                                Jimmy, Lory and Jitu create <strong>Nyara</strong>: an electrifying mix of storytelling, satire, music and rhythm that the country starts repeating back to them. Then the industry comes shopping for one sellable star. Overlooked Jimmy secretly takes the deal — and must face what remains of the act, the home he thought he had outgrown, and the cost of being heard alone.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="story-banner">
+                        <img
+                            src="images/nyara-storyline-wide.webp"
+                            alt="Empty Nairobi rooftop stage — a single mic before the skyline"
+                            width="2100"
+                            height="900"
+                            loading="lazy"
+                        >
+                    </div>
+</div>
+            </div>
+        </section>
+<!-- Sticky waitlist + scrolling content -->
+        <section class="follow" id="waitlist">
+            <div class="follow-layout">
+                <aside class="follow-sticky">
+                    <h2 class="follow-title">Be in the room from day one</h2>
+                    <p class="follow-statement">
+                        Join the waitlist for premiere news and early updates while Nyara is still being written. No spam — only what matters for the film.
+                    </p>
+
+                    <form class="waitlist-form" id="waitlist-form" action="waitlist.php" method="post" novalidate>
+                        <label class="visually-hidden" for="contact" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email or WhatsApp</label>
+                        <input id="contact" name="contact" type="text" required autocomplete="email" placeholder="Email or WhatsApp number">
+                        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <button type="submit">Join the Waitlist</button>
+                        <p class="form-error" id="form-error" role="alert" hidden></p>
+                    </form>
+
+                    <div class="form-success" id="form-success" role="status" aria-live="polite">
+                        You’re on the list. Thank you for standing with <strong>Nyara Nyara Nyara</strong> this early.
+                    </div>
+
+                    <ul class="follow-share-icons">
+                        <li>
+                            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3.1l.9-3H13V9c0-.6.4-1 1-1z"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                                    <rect x="3" y="3" width="18" height="18" rx="4"/>
+                                    <circle cx="12" cy="12" r="4"/>
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.527-8.604L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <div class="follow-main" id="film">
+                    <div class="follow-block">
+                        <h2 class="follow-kicker">On the slate</h2>
+                        <p class="follow-intro">
+                            Drama, music, dance and comedy converge in the story of Nyara Nyara — one film, many forms. The script is locked; follow the path from page to premiere as we move toward finance and cameras.
+                        </p>
+
+                        <ol class="slate-path" aria-label="Production path">
+                            <li>
+                                <span class="slate-step">Done</span>
+                                <span class="slate-title">Script</span>
+                                <span class="slate-note">Story, character, and the sound of the act — locked on the page.</span>
+                            </li>
+                            <li class="is-now">
+                                <span class="slate-step">Now</span>
+                                <span class="slate-title">Finance</span>
+                                <span class="slate-note">Partners and funding to carry the locked script into production.</span>
+                            </li>
+                            <li>
+                                <span class="slate-step">Ahead</span>
+                                <span class="slate-title">Shoot</span>
+                                <span class="slate-note">Principal photography across Kilifi, Nairobi, Nyeri and Kisumu.</span>
+                            </li>
+                            <li>
+                                <span class="slate-step">Goal</span>
+                                <span class="slate-title">Premiere</span>
+                                <span class="slate-note">Festival debut and release for the audience waiting now.</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                                        <div class="follow-block" id="done">
+                        <h2 class="done-label">Preproduction: Scriptwriting &amp; casting</h2>
+                        <p class="done-copy">
+                            This stage is complete. The script is on the page, and casting is locked for the voices that will carry Nyara Nyara.
+                        </p>
+                        <div class="done-media" aria-label="Preproduction stills and clips">
+                            <figure class="done-media-item">
+                                <img
+                                    src="images/scriptandcast1.webp"
+                                    alt="Scriptwriting and casting — still one"
+                                    width="800"
+                                    height="600"
+                                    loading="lazy"
+                                >
+                            </figure>
+                            <figure class="done-media-item">
+                                <img
+                                    src="images/scriptandcast2.webp"
+                                    alt="Scriptwriting and casting — still two"
+                                    width="800"
+                                    height="600"
+                                    loading="lazy"
+                                >
+                            </figure>
+                            <figure class="done-media-item done-media-item--video">
+                                <div class="done-player">
+                                    <video playsinline preload="metadata" poster="images/nyara-hero.webp" aria-label="Preproduction clip one">
+                                        <source src="images/nyara-prepro-1.mp4" type="video/mp4">
+                                    </video>
+                                    <button type="button" class="done-player-toggle" aria-label="Play">
+                                        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+                                        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
+                                    </button>
+                                    <div class="done-player-bar" role="slider" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                                        <div class="done-player-progress"><div class="done-player-progress-fill"></div></div>
+                                    </div>
+                                </div>
+                            </figure>
+                            <figure class="done-media-item done-media-item--video">
+                                <div class="done-player">
+                                    <video playsinline preload="metadata" poster="images/nyara-storyline-wide.webp" aria-label="Preproduction clip two">
+                                        <source src="images/nyara-prepro-2.mp4" type="video/mp4">
+                                    </video>
+                                    <button type="button" class="done-player-toggle" aria-label="Play">
+                                        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+                                        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
+                                    </button>
+                                    <div class="done-player-bar" role="slider" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                                        <div class="done-player-progress"><div class="done-player-progress-fill"></div></div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                                        <div class="cast" id="cast" aria-label="Cast">
+                        <h2 class="cast-heading">Who will they be?</h2>
+                        <ul class="cast-grid">
+                            <li class="cast-member">
+                                <div class="cast-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M0 0h1024v1024H0z" fill="none" /><path fill="currentColor" d="M764 280.9c-14-30.6-33.9-58.1-59.3-81.6C653.1 151.4 584.6 125 512 125s-141.1 26.4-192.7 74.2c-25.4 23.6-45.3 51-59.3 81.7c-14.6 32-22 65.9-22 100.9v27c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-27c0-99.5 88.6-180.4 197.6-180.4s197.6 80.9 197.6 180.4c0 40.8-14.5 79.2-42 111.2c-27.2 31.7-65.6 54.4-108.1 64c-24.3 5.5-46.2 19.2-61.7 38.8a110.85 110.85 0 0 0-23.9 68.6v31.4c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-31.4c0-15.7 10.9-29.5 26-32.9c58.4-13.2 111.4-44.7 149.3-88.7c19.1-22.3 34-47.1 44.3-74c10.7-27.9 16.1-57.2 16.1-87c0-35-7.4-69-22-100.9M512 787c-30.9 0-56 25.1-56 56s25.1 56 56 56s56-25.1 56-56s-25.1-56-56-56" /></svg></div>
+                                <p class="cast-name">Jimmy</p>
+                            </li>
+                            <li class="cast-member">
+                                <div class="cast-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M0 0h1024v1024H0z" fill="none" /><path fill="currentColor" d="M764 280.9c-14-30.6-33.9-58.1-59.3-81.6C653.1 151.4 584.6 125 512 125s-141.1 26.4-192.7 74.2c-25.4 23.6-45.3 51-59.3 81.7c-14.6 32-22 65.9-22 100.9v27c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-27c0-99.5 88.6-180.4 197.6-180.4s197.6 80.9 197.6 180.4c0 40.8-14.5 79.2-42 111.2c-27.2 31.7-65.6 54.4-108.1 64c-24.3 5.5-46.2 19.2-61.7 38.8a110.85 110.85 0 0 0-23.9 68.6v31.4c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-31.4c0-15.7 10.9-29.5 26-32.9c58.4-13.2 111.4-44.7 149.3-88.7c19.1-22.3 34-47.1 44.3-74c10.7-27.9 16.1-57.2 16.1-87c0-35-7.4-69-22-100.9M512 787c-30.9 0-56 25.1-56 56s25.1 56 56 56s56-25.1 56-56s-25.1-56-56-56" /></svg></div>
+                                <p class="cast-name">Lory</p>
+                            </li>
+                            <li class="cast-member">
+                                <div class="cast-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M0 0h1024v1024H0z" fill="none" /><path fill="currentColor" d="M764 280.9c-14-30.6-33.9-58.1-59.3-81.6C653.1 151.4 584.6 125 512 125s-141.1 26.4-192.7 74.2c-25.4 23.6-45.3 51-59.3 81.7c-14.6 32-22 65.9-22 100.9v27c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-27c0-99.5 88.6-180.4 197.6-180.4s197.6 80.9 197.6 180.4c0 40.8-14.5 79.2-42 111.2c-27.2 31.7-65.6 54.4-108.1 64c-24.3 5.5-46.2 19.2-61.7 38.8a110.85 110.85 0 0 0-23.9 68.6v31.4c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-31.4c0-15.7 10.9-29.5 26-32.9c58.4-13.2 111.4-44.7 149.3-88.7c19.1-22.3 34-47.1 44.3-74c10.7-27.9 16.1-57.2 16.1-87c0-35-7.4-69-22-100.9M512 787c-30.9 0-56 25.1-56 56s25.1 56 56 56s56-25.1 56-56s-25.1-56-56-56" /></svg></div>
+                                <p class="cast-name">Jitu</p>
+                            </li>
+                            <li class="cast-member">
+                                <div class="cast-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M0 0h1024v1024H0z" fill="none" /><path fill="currentColor" d="M764 280.9c-14-30.6-33.9-58.1-59.3-81.6C653.1 151.4 584.6 125 512 125s-141.1 26.4-192.7 74.2c-25.4 23.6-45.3 51-59.3 81.7c-14.6 32-22 65.9-22 100.9v27c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-27c0-99.5 88.6-180.4 197.6-180.4s197.6 80.9 197.6 180.4c0 40.8-14.5 79.2-42 111.2c-27.2 31.7-65.6 54.4-108.1 64c-24.3 5.5-46.2 19.2-61.7 38.8a110.85 110.85 0 0 0-23.9 68.6v31.4c0 6.2 5 11.2 11.2 11.2h54c6.2 0 11.2-5 11.2-11.2v-31.4c0-15.7 10.9-29.5 26-32.9c58.4-13.2 111.4-44.7 149.3-88.7c19.1-22.3 34-47.1 44.3-74c10.7-27.9 16.1-57.2 16.1-87c0-35-7.4-69-22-100.9M512 787c-30.9 0-56 25.1-56 56s25.1 56 56 56s56-25.1 56-56s-25.1-56-56-56" /></svg></div>
+                                <p class="cast-name">TBA</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="support" id="support">
+                        <h2 class="follow-kicker">Support for the film</h2>
+                        <p class="follow-intro">
+                            A community is already forming around Nyara Nyara Nyara. Join them on the waitlist and across our channels.
+                        </p>
+
+                        <div class="support-stats" role="group" aria-label="Support metrics">
+                            <div class="stat">
+                                <p class="stat-value stat-value--waitlist" data-count="1240">0<span>+</span></p>
+                                <p class="stat-label">Waitlist supporters</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-value stat-value--social" data-count="8600">0<span>+</span></p>
+                                <p class="stat-label">Social following</p>
+                            </div>
+                            <div class="stat">
+                                <p class="stat-value stat-value--platforms" data-count="3">0</p>
+                                <p class="stat-label">Platforms active</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer>
+        <div class="footer-inner">
+            <p><span class="footer-brand">Nyara Nyara Nyara</span> · © 2026</p>
+            <div class="footer-links">
+                <a href="mailto:nyara@dgi-collektive.com">nyara@dgi-collektive.com</a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+            <p>DGI COLLEKTIVE production</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
