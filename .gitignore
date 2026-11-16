@@ -16,3 +16,6 @@ Desktop.ini
 *.log
 *.tmp
 .cache/
+
+# Generated waitlist count cache (rebuilt by waitlist.php)
+data/waitlist.count

@@ -13,8 +13,8 @@ This is a static site (HTML / CSS / JS) plus one PHP file for waitlist signups. 
 | Hero | Film title, short pitch, waitlist CTA, rotating “why join” lines |
 | Storyline | Synopsis + key film facts |
 | Waitlist sidebar | Email / WhatsApp signup (sticky on desktop) |
-| On the slate | Production path: Script → Finance → Shoot → Premiere |
-| Preproduction (done so far) | Scriptwriting & casting update + 2 stills + 2 clips |
+| On the slate | Production path: Script → Casting → Finance → Shoot → Premiere |
+| Stages accordion | Completed stages (latest open); mixed image/video media |
 | Cast | Character placeholders (Jimmy, Lory, Jitu, TBA) |
 | Support | Waitlist / social / platform counts |
 | Footer | Email + socials + production credit |
@@ -29,7 +29,7 @@ nyaranyara/
 ├── waitlist.php        # Receives waitlist signups
 ├── css/style.css
 ├── js/script.js
-├── images/             # WebP stills + MP4 clips
+├── images/             # WebP stills (MP4 clips optional)
 ├── data/
 │   ├── waitlist.csv    # Saved signups (not public)
 │   └── .htaccess       # Blocks browser access to data/
@@ -155,25 +155,41 @@ Find the block with class `slate-path`.
 - Update each `slate-note`
 - Update the intro under **On the slate** when the stage changes
 
-### 2. Preproduction / progress media
+### 2. Stages accordion (progress updates)
 
-Section `#done`:
+Section `#done` (`.stages`) is an **accordion**. Only one stage is open at a time. The **latest** stage should sit at the **top** and have `class="stage is-open"`.  
+If there is **only one** stage, the accordion is disabled automatically (always open, no chevron).
 
-- Update `.done-label` and `.done-copy`
-- Replace stills / clips in `images/` (WebP + MP4, small file size)
-- When a new stage is complete, rewrite this block so it matches reality
+**To add a new completed stage:**
+1. Copy an existing `<article class="stage">…</article>`
+2. Paste it **above** the older stages
+3. Put `is-open` only on the new (top) stage; remove `is-open` from the others
+4. Give the button/panel unique `id` values
+5. Update the title (`.stage-label`) and copy (`.stage-copy`)
+6. Fill `.stage-media` with images and/or videos
+
+**Media ratios** — add one class per item so layout stays premium:
+- `stage-media-item--landscape` → wide (16:9)
+- `stage-media-item--portrait` → tall (3:4)
+- `stage-media-item--square` → 1:1
+
+You can mix images and videos in any combination. On large screens all items share the **same height**; width adapts to the ratio. Use compressed **WebP** / **MP4**.
 
 ### 3. Support numbers
 
-Edit `data-count` on each `.stat-value`:
+- **Waitlist** count updates automatically from `waitlist.php` when people join — do not hardcode it.
+- Edit `data-count` only for **social** and **platforms**:
 
 ```html
-<p class="stat-value stat-value--waitlist" data-count="0">0<span>+</span></p>
-<p class="stat-value stat-value--social" data-count="0">0<span>+</span></p>
-<p class="stat-value stat-value--platforms" data-count="3">0</p>
+<div class="stat stat--social">
+  <p class="stat-value" data-count="1">0<span>+</span></p>
+</div>
+<div class="stat stat--platforms">
+  <p class="stat-value" data-count="5">0</p>
+</div>
 ```
 
-The page animates from `0` to the `data-count` value — change only that number.
+The page animates from `0` to the `data-count` value.
 
 ### 4. Cast / storyline / hero / socials
 
@@ -181,7 +197,7 @@ The page animates from `0` to the `data-count` value — change only that number
 - Hero / storyline images in `images/`
 - Synopsis in `.story-copy`
 - Film facts in `.story-meta`
-- Real social URLs for Instagram / X / TikTok / Facebook
+- Real social URLs for Instagram / TikTok / Facebook / YouTube / LinkedIn
 - Footer email and credit
 
 ---
@@ -189,12 +205,16 @@ The page animates from `0` to the `data-count` value — change only that number
 ## Waitlist (how signups work)
 
 1. Form posts to **`waitlist.php`**
-2. Contact is saved in **`data/waitlist.csv`**
-3. Notification email goes to **nyara@dgi-collektive.com**
+2. Contact is saved in **`data/waitlist.csv`** (file lock so concurrent signups don’t corrupt the file)
+3. Live supporter count is updated and returned to the page automatically
+4. Notification email goes to **nyara@dgi-collektive.com**
 
+The Support “Waitlist supporters” number is loaded from the server (not hardcoded).  
 `data/.htaccess` blocks public downloads of the CSV. Download it only through File Manager.
 
 To change the notification address, edit the top of `waitlist.php`.
+
+**Do not overwrite** live `data/waitlist.csv` or `data/waitlist.count` when uploading site updates.
 
 ---
 
